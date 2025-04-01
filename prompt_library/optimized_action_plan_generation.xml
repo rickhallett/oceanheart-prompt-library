@@ -1,0 +1,45 @@
+<prompt id="optimized_action_plan_generation">
+  <purpose>
+    To generate a prioritized and sequenced action plan derived from the previously generated
+    internal data model (or equivalent analysis). This plan must be specifically optimized for an
+    individual characterized by high work capacity and speed, but also a tendency towards
+    hyper-focus ('tunnel lock') on potentially suboptimal tasks and associated risk of burnout.
+  </purpose>
+  <instructions>
+    <instruction>Identify the input: Use the internal data model generated from prompt
+      'audio_analysis_model_generation' (or perform equivalent analysis). Specifically requires the
+      extracted 'Action List' / 'To-Do List'.</instruction>
+    <instruction>Extract and consolidate all actionable tasks identified in the input into a
+      definitive 'Action List'.</instruction>
+    <instruction>For each item in the 'Action List', provide a reasonable time estimate for
+      completion (specify units, e.g., hours, Pomodoro units), assuming focused, high-speed work.</instruction>
+    <instruction>Group logically related tasks or sub-tasks within the list if beneficial for
+      clarity or execution.</instruction>
+    <instruction>Develop and apply prioritization criteria to determine the 'Optimal Task Execution
+      Order', specifically addressing the target user profile:</instruction>
+    <instruction>Criterion: Prioritize tasks with the highest potential impact, strategic
+      importance, or ability to unblock other tasks ('Impact First').</instruction>
+    <instruction>Criterion: Ensure prerequisite tasks are scheduled before dependent tasks
+      ('Dependency Aware').</instruction>
+    <instruction>Criterion: Mitigate 'Tunnel Lock' - Avoid placing low-impact, potentially
+      time-consuming tasks early; consider interspersing shorter, high-yield tasks with longer ones;
+      break down very large tasks into smaller sub-tasks within the sequence.</instruction>
+    <instruction>Criterion: Consider 'Burnout Mitigation' - Sequence tasks to allow for variation in
+      cognitive load or task type where possible, promoting sustainable high performance (Note:
+      Explicit break scheduling is secondary to task flow optimization unless specified).</instruction>
+    <instruction>Criterion: Ensure 'Clarity & Focus' - The sequence must clearly indicate the next
+      most effective action, reducing decision friction.</instruction>
+    <instruction>Present the output clearly structured as follows:</instruction>
+    <instruction>Output Section 1: 'Prioritized Action List' (The consolidated list of tasks).</instruction>
+    <instruction>Output Section 2: 'Estimated Time' (Time estimate listed alongside each task).</instruction>
+    <instruction>Output Section 3: 'Optimized Execution Sequence' (A numbered list indicating the
+      recommended order. Include brief rationale for key prioritization decisions if non-obvious,
+      e.g., "High impact," "Unblocks X, Y," "Prerequisite," "Shorter task for momentum").</instruction>
+    <instruction>The final output must be a practical, actionable roadmap that leverages the user's
+      strengths while actively mitigating the risks associated with their specific work style.</instruction>
+  </instructions>
+  <!-- Note: Input data model is referenced in instructions, not embedded here. -->
+  <content type="data_model_reference">
+    Input model specified in instructions.
+  </content>
+</prompt>
