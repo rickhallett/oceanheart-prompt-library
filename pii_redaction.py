@@ -70,15 +70,8 @@ def define_pii_categories():
 
 
 @app.cell
-def ui_elements(mo, pii_categories_str):
-    transcript_input = mo.ui.text_area(
-        label="Paste Clinical Transcript Here",
-        full_width=True,
-        line_numbers=True,
-        rows=15,
-    )
-
-    # Dynamically get available models using llm library
+def get_available_models(llm):
+    """Dynamically gets available models using the llm library."""
     try:
         models_with_aliases = llm.get_models_with_aliases()
         available_models_dict = {m.model.model_id: m.model for m in models_with_aliases}
@@ -88,17 +81,32 @@ def ui_elements(mo, pii_categories_str):
                 available_models_dict[alias] = m.model
 
         # Default model logic (try default, then first available)
-        default_llm_model = llm.get_default_model()
-        if default_llm_model not in available_models_dict:
-            default_llm_model = next(iter(available_models_dict.keys()), None)
+        default_llm_model_id = llm.get_default_model_id()
+        if default_llm_model_id not in available_models_dict:
+            # Fallback to the first model ID if default is not found or None
+            default_llm_model_id = next(iter(available_models_dict.keys()), None)
 
     except Exception as e:
         print(f"Error getting models: {e}")  # Log error
         available_models_dict = {"error": "Could not load models"}
-        default_llm_model = "error"
+        default_llm_model_id = "error"
+
+    return available_models_dict, default_llm_model_id
+
+
+@app.cell
+def ui_elements(mo, pii_categories_str, get_available_models):
+    available_models_dict, default_llm_model_id = get_available_models
+
+    transcript_input = mo.ui.text_area(
+        label="Paste Clinical Transcript Here",
+        full_width=True,
+        line_numbers=True,
+        rows=15,
+    )
 
     model_selector = mo.ui.dropdown(
-        options=available_models_dict, value=default_llm_model, label="Select LLM"
+        options=available_models_dict, value=default_llm_model_id, label="Select LLM"
     )
 
     initial_prompt_template = f"""
