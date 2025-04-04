@@ -96,7 +96,10 @@ def get_available_models(llm):
 
 @app.cell
 def ui_elements(mo, pii_categories_str, get_available_models):
-    available_models_dict, default_llm_model_id = get_available_models
+    # Explicitly unpack the tuple return value
+    get_available_models_result = get_available_models
+    available_models_dict = get_available_models_result[0]
+    default_llm_model_id = get_available_models_result[1]
 
     transcript_input = mo.ui.text_area(
         label="Paste Clinical Transcript Here",
