@@ -233,3 +233,12 @@ def build_gemini_1_2_002():
     gemini_1_5_flash_002.key = GEMINI_API_KEY
 
     return gemini_1_5_pro_002, gemini_1_5_flash_002
+
+
+def build_latest_gemini_model():
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+    latest_gemini_model: llm.Model = llm.get_model("gemini-2.5-pro-exp-03-25")
+    latest_gemini_model.key = GEMINI_API_KEY
+
+    return latest_gemini_model
