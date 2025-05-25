@@ -345,6 +345,11 @@ def __(mo):
 
 
 @app.cell
+def __():
+    return
+
+
+@app.cell
 def __(data, mo):
     cars = data.cars()
     mo.ui.data_explorer(cars)

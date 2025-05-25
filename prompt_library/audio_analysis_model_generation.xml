@@ -1,0 +1,48 @@
+<prompt id="audio_analysis_model_generation">
+  <purpose>
+    To process provided audio input, generate a high-fidelity transcription, and construct a
+    detailed, multi-faceted internal data model suitable for observation and subsequent analysis.
+    The model should employ optimal data labeling for recognizing themes, actions, business
+    processes/strategy, and speaker contributions, including generating a preliminary to-do list.
+  </purpose>
+  <instructions>
+    <instruction>Identify the input audio data source (e.g., file path, URL, or reference 'provided
+      audio stream').</instruction>
+    <instruction>Execute high-accuracy Automatic Speech Recognition (ASR) on the input audio.</instruction>
+    <instruction>Perform Speaker Diarization to segment the transcript by speaker, assigning unique
+      identifiers (e.g., Speaker_A, Speaker_B) or mapping to known profiles.</instruction>
+    <instruction>Associate precise timestamps (start and end times) with each utterance and speaker
+      segment in the transcript.</instruction>
+    <instruction>Initialize a structured internal data model (suggested formats: JSON-LD, Knowledge
+      Graph representation, or nested dictionary).</instruction>
+    <instruction>Iterate through the diarized transcript, applying NLP and semantic analysis
+      techniques with optimal data labeling/tagging mechanisms for the following features:</instruction>
+    <instruction>Extract and label 'Theme Recognition': Identify recurring subjects, core concepts
+      using methods like topic modeling (LDA, NMF), keyword extraction (TF-IDF, RAKE), and semantic
+      clustering. Tag relevant transcript segments.</instruction>
+    <instruction>Extract and label 'Action Recognition': Identify explicit/implicit tasks, actions,
+      commitments using intent recognition, verb phrase extraction, dependency parsing. Classify
+      action status (proposed, assigned, pending, etc.). Tag relevant utterances.</instruction>
+    <instruction>Extract and label 'Business Process & Strategy Identification': Analyze sequences,
+      workflows, goals, strategic statements, resource mentions. Identify and label processes,
+      initiatives, frameworks using relation extraction where appropriate.</instruction>
+    <instruction>Generate 'To-Do List': Filter recognized actions into concrete, actionable tasks.
+      Structure as distinct items linked to responsible speaker (if identifiable) and context.</instruction>
+    <instruction>Ensure accurate 'Speaker Attribution': Link all extracted features (themes,
+      actions, process elements, to-dos) to the corresponding speaker(s).</instruction>
+    <instruction>Employ a consistent, expressive, and computationally useful labeling schema (e.g.,
+      controlled vocabularies, semantic tags) for all features.</instruction>
+    <instruction>Structure the model hierarchically or relationally to represent connections between
+      speakers, utterances, themes, actions, processes, and to-do items.</instruction>
+    <instruction>Ensure data provenance by linking model elements back to specific transcript
+      segments and timestamps.</instruction>
+    <instruction>Prioritize accuracy in transcription, diarization, and feature extraction.</instruction>
+    <instruction>Present the fully populated internal data model in a machine-readable and
+      human-inspectable format (JSON or YAML preferred). This output must allow clear observation of
+      all identified elements and their interconnections.</instruction>
+  </instructions>
+  <!-- Note: Input audio content is referenced in instructions, not embedded here. -->
+  <content type="audio_source_reference">
+    Input source specified in instructions.
+  </content>
+</prompt>

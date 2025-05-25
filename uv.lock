@@ -415,7 +415,7 @@ wheels = [
 
 [[package]]
 name = "llm"
-version = "0.16"
+version = "0.23"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -423,6 +423,7 @@ dependencies = [
     { name = "openai" },
     { name = "pip" },
     { name = "pluggy" },
+    { name = "puremagic" },
     { name = "pydantic" },
     { name = "pyreadline3", marker = "sys_platform == 'win32'" },
     { name = "python-ulid" },
@@ -431,9 +432,9 @@ dependencies = [
     { name = "sqlite-migrate" },
     { name = "sqlite-utils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7e/cc/57294e607f85c2d922c14f53078ae7545f7bec951e5514416ad88bd72a32/llm-0.16.tar.gz", hash = "sha256:6f8780308d021bb8df755e58e0188ab34af0961f64e303e808f928b456ccc51b", size = 36774 }
+sdist = { url = "https://files.pythonhosted.org/packages/61/0d/012b8d57d78f247c5f3878d3911e7431a8c7c4b8a6ecd9c984145ed019d3/llm-0.23.tar.gz", hash = "sha256:552e549a46cbcae6f3414b8f5952d6651a7f8b60b5f09444057a7a52793a6c8e", size = 49966 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ff/8e/a450b23155621c28ae46716a6398afcd9e23fa5a34401d3ca8e4560f5ee4/llm-0.16-py3-none-any.whl", hash = "sha256:b9fe4f43b0b7da4b2f53d9c051e6abf3cd5db7b14fee6747655b9242f0aee22e", size = 38335 },
+    { url = "https://files.pythonhosted.org/packages/52/79/a80563b03fb3d0097ce344fd12e5463b90295a9d6aa1210a9a2e03e22f4e/llm-0.23-py3-none-any.whl", hash = "sha256:3c6fe7ee80104e0e5dee0eb98a1b2ad00d4874535bbf6fe9578380062cf1ee6d", size = 51602 },
 ]
 
 [[package]]
@@ -555,7 +556,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "altair", specifier = ">=5.4.1" },
-    { name = "llm", specifier = ">=0.16" },
+    { name = "llm", specifier = ">=0.23" },
     { name = "llm-claude", specifier = ">=0.4.0" },
     { name = "llm-claude-3", specifier = ">=0.4.1" },
     { name = "llm-gemini", specifier = ">=0.1a5" },
@@ -666,7 +667,7 @@ wheels = [
 
 [[package]]
 name = "openai"
-version = "1.47.0"
+version = "1.70.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
@@ -678,9 +679,9 @@ dependencies = [
     { name = "tqdm" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e9/80/4c366e9113527894584a6404f105d134fae83a314dc04a6a99bd0e2459bb/openai-1.47.0.tar.gz", hash = "sha256:6e14d6f77c8cf546646afcd87a2ef752505b3710d2564a2e433e17307dfa86a0", size = 297886 }
+sdist = { url = "https://files.pythonhosted.org/packages/87/f5/ae0f3cd226c2993b4ac1cc4b5f6ca099764689f403c14922c9356accec66/openai-1.70.0.tar.gz", hash = "sha256:e52a8d54c3efeb08cf58539b5b21a5abef25368b5432965e4de88cdf4e091b2b", size = 409640 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a2/3c/28d7cf1a3292c93e5def8acd89535ba380cb8dd888c26cdbfe420249e143/openai-1.47.0-py3-none-any.whl", hash = "sha256:9ccc8737dfa791f7bd903db4758c176b8544a8cd89d3a3d2add3cea02a34c3a0", size = 375576 },
+    { url = "https://files.pythonhosted.org/packages/e2/39/c4b38317d2c702c4bc763957735aaeaf30dfc43b5b824121c49a4ba7ba0f/openai-1.70.0-py3-none-any.whl", hash = "sha256:f6438d053fd8b2e05fd6bef70871e832d9bbdf55e119d0ac5b92726f1ae6f614", size = 599070 },
 ]
 
 [[package]]
@@ -772,6 +773,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/8b/20/2ff69ad9c35c3df1858ac4e094f20bd2374d33c8643cf41da8fd7cdcb78b/psutil-6.0.0-cp37-abi3-win32.whl", hash = "sha256:a495580d6bae27291324fe60cea0b5a7c23fa36a7cd35035a16d93bdcf076b9d", size = 253560 },
     { url = "https://files.pythonhosted.org/packages/73/44/561092313ae925f3acfaace6f9ddc4f6a9c748704317bad9c8c8f8a36a79/psutil-6.0.0-cp37-abi3-win_amd64.whl", hash = "sha256:33ea5e1c975250a720b3a6609c490db40dae5d83a4eb315170c4fe0d8b1f34b3", size = 257399 },
     { url = "https://files.pythonhosted.org/packages/7c/06/63872a64c312a24fb9b4af123ee7007a306617da63ff13bcc1432386ead7/psutil-6.0.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:ffe7fc9b6b36beadc8c322f84e1caff51e8703b88eee1da46d1e3a6ae11b4fd0", size = 251988 },
+]
+
+[[package]]
+name = "puremagic"
+version = "1.28"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/09/2d/40599f25667733e41bbc3d7e4c7c36d5e7860874aa5fe9c584e90b34954d/puremagic-1.28.tar.gz", hash = "sha256:195893fc129657f611b86b959aab337207d6df7f25372209269ed9e303c1a8c0", size = 314945 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c5/53/200a97332d10ed3edd7afcbc5f5543920ac59badfe5762598327999f012e/puremagic-1.28-py3-none-any.whl", hash = "sha256:e16cb9708ee2007142c37931c58f07f7eca956b3472489106a7245e5c3aa1241", size = 43241 },
 ]
 
 [[package]]
